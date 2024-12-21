@@ -28,8 +28,9 @@ def load_user(user_id):
 
 # Default Route
 @app.route('/')
-def index():
-    return redirect(url_for('login'))
+def home():
+    return render_template('home.html')
+
 
 
 # Registration Route
@@ -79,7 +80,11 @@ def dashboard():
 def logout():
     logout_user()
     flash('Logged out successfully!', 'info')
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))
+
+
+
+
 
 
 # Run the App
